@@ -6,7 +6,7 @@ html * {
   box-sizing: inherit;
 }
 
-header {
+header{
   display: flex;
   justify-content: left;
   background-color: mediumpurple;
