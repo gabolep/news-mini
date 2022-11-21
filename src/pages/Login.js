@@ -1,45 +1,49 @@
-import React from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useAuth } from '../context/authContext'
 
 const style = {
-    color: {
-        color: "white"
-    }
-}
+  color: {
+    color: "white",
+  },
+};
 
 export const Login = () => {
+  //const { login } = useAuth()
 
-    //const { login } = useAuth()
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-    const [user, setUser] = useState({
-        email: '',
-        password: ''
-    });
+  const handleChange = ({ target: { name, value } }) => {
+    setUser({ ...user, [name]: value });
+  };
 
-    const handleChange = ({target: {name, value}}) => {
-        setUser({...user, [name]: value})
-    }
-
-    function handleSubmit(e){
-        e.preventDefault()
-        //login(user.email, user.password).then(() => navigate('/home'))
-        navigate('/admin/dictionary')
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
+    //login(user.email, user.password).then(() => navigate('/home'))
+    navigate("/admin/dictionary");
+  }
 
   return (
     <div style={style.color}>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-            <label>email:</label>
-            <input is='email' name='email' type="email" onInput={handleChange}/>
-            <label>password:</label>
-            <input id='password' name='password' type="password" onInput={handleChange}/>
-            <input type="submit" value="Iniciar sesion"/>
-        </form>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label className=" text-black">email:</label>
+        <input is="email" name="email" type="email" onInput={handleChange} />
+        <label className=" text-black">password:</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          onInput={handleChange}
+        />
+        <input className=" text-black" type="submit" value="Iniciar sesion" />
+      </form>
     </div>
-  )
-}
+  );
+};

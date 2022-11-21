@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import FirstCard from "../components/FirstCard";
-import apiNews from "../services/ApiNews";
 import "../App.css";
 
-const url = "https://jsonplaceholder.typicode.com/todos";
 const news = [
   {
     title:
@@ -43,14 +40,10 @@ const news = [
 ];
 
 const Home = () => {
-  const [todos, setTodos] = useState();
-  console.log(news[0].title);
-  useEffect(() => {
-    apiNews(url, setTodos);
-  }, []);
   return (
     <div>
       <Header>Portal de Noticias</Header>
+      {/* 
       <div className="container">
         Ultima Noticia
         <FirstCard />
@@ -70,6 +63,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      */}
     </div>
   );
 };

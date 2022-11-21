@@ -3,12 +3,13 @@ div {
 }
 .container {
   padding: 20px;
-  width: 90%;
+  width: 80%;
   justify-content: center;
-  margin: 0 auto;
+  margin: 50px auto;
   background-color: rgb(245, 245, 245);
   font-size: 40px;
   font-weight: 400;
+  z-index: -2;
 }
 
 .grid-container {

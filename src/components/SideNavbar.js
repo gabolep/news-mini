@@ -15,7 +15,7 @@ const menuItems = [
 ];
 
 function SideNavbar() {
-  const [toggleCollapse, setToggleCollapse] = useState(false);
+  const [toggleCollapse, setToggleCollapse] = useState(true);
   const [isCollapsible, setIsCollapsible] = useState(false);
 
   const { pathname } = useLocation();
@@ -51,7 +51,7 @@ function SideNavbar() {
     return ClassNames(
       "flex items-center cursor-pointer hover:bg-secondary rounded w-full overflow-hidden whitespace-nowrap",
       {
-        ["bg-light-lighter"]: activeMenu.id === menu.id,
+        ["bg-white"]: activeMenu.id === menu.id,
       }
     );
   };
@@ -71,13 +71,13 @@ function SideNavbar() {
       onMouseLeave={onMouseOver}
       style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
     >
-      <div className="flex flex-col">
-        <div className="flex items-center justify-between relative">
-          <div className="flex items-center pl-1 gap-4">
-            <image src={user} className={logo} />
+      <div className="flex flex-col bg-light">
+        <div className="flex items-center justify-between bg-light relative">
+          <div className="flex items-center bg-light pl-1 gap-4">
+            <img src={user} className={logo} />
             <span
               className={ClassNames(
-                "mt-2 text-lg font-medium text-text-light",
+                "mt-2 text-lg bg-light font-medium text-text-light",
                 {
                   hidden: toggleCollapse,
                 }
@@ -96,16 +96,16 @@ function SideNavbar() {
           )}
         </div>
 
-        <div className="flex flex-col items-start mt-24">
+        <div className="flex flex-col bg-light items-start mt-24">
           {menuItems.map(({ icon: Icon, ...menu }) => {
             const classes = getNavItemClasses(menu);
             return (
               <div className={classes}>
                 <Link
-                  className="flex py-4 px-3 items-center w-full h-full"
+                  className="flex py-4 px-3 bg-light items-center w-full h-full"
                   to={menu.link}
                 >
-                  <div style={{ width: "2.5rem" }}>
+                  <div className="bg-light" style={{ width: "2.5rem" }}>
                     <Icon />
                   </div>
                   {!toggleCollapse && (
