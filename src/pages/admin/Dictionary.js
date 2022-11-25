@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/Layout.js";
-import Header from "../components/Header.js";
+import Layout from "../../components/Layout.js";
+import Header from "../../components/Header.js";
 
 const dictionary = () => {
   return (

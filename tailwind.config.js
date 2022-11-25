@@ -6,11 +6,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    ...defaultTheme,
     colors: {
-      ...defaultTheme.colors,
       primary: "#8B5CF6",
+      primaryHeader: "#8B5CF6",
       secondary: "#A78BFA",
+      secondaryHeader: "#A78BFA",
       white: "#F5F3FF",
       black: "#1F2937",
       text: {
@@ -25,5 +25,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

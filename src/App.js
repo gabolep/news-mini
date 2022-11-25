@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import { ProtectedRoute } from './routes/ProtectedRoute';
 //import { AuthProvider } from './context/authContext';
-import Dictionary from './pages/Dictionary';
-import Game from './pages/Game';
-import News from './pages/News';
-import Users from './pages/Users';
+import Dictionary from './pages/admin/Dictionary';
+import Game from './pages/admin/Game';
+import News from './pages/admin/News';
+import Users from './pages/admin/Users';
 import { Login } from './pages/Login';
 import Home from './pages/Home';
 import "./App.css";

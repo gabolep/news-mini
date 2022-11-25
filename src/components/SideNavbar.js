@@ -6,11 +6,13 @@ import CollapsIcon from "./icons/CollapsIcon.js";
 import ArticleIcon from "./icons/ArticleIcon.js";
 import UserIcon from "./icons/UserIcon.js";
 import VideosIcon from "./icons/VideosIcon.js";
+import HomeIcon from "./icons/HomeIcon.js";
+
 
 const menuItems = [
   { id: 1, label: "Noticias", icon: ArticleIcon, link: "/admin/news" },
   { id: 2, label: "Personal", icon: UserIcon, link: "/admin/users" },
-  { id: 3, label: "Diccionario", icon: VideosIcon, link: "/admin/dictionary" },
+  { id: 3, label: "Diccionario", icon: HomeIcon, link: "/admin/dictionary" },
   { id: 4, label: "Juego", icon: VideosIcon, link: "/admin/game" },
 ];
 
@@ -49,10 +51,7 @@ function SideNavbar() {
 
   const getNavItemClasses = (menu) => {
     return ClassNames(
-      "flex items-center cursor-pointer hover:bg-secondary rounded w-full overflow-hidden whitespace-nowrap",
-      {
-        ["bg-white"]: activeMenu.id === menu.id,
-      }
+      "flex items-center bg-light cursor-pointer hover:bg-secondaryHeader rounded w-full overflow-hidden whitespace-nowrap"
     );
   };
 
@@ -71,7 +70,7 @@ function SideNavbar() {
       onMouseLeave={onMouseOver}
       style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
     >
-      <div className="flex flex-col bg-light">
+      <div className="flex flex-col bg-light ">
         <div className="flex items-center justify-between bg-light relative">
           <div className="flex items-center bg-light pl-1 gap-4">
             <img src={user} className={logo} />
@@ -96,18 +95,18 @@ function SideNavbar() {
           )}
         </div>
 
-        <div className="flex flex-col bg-light items-start mt-24">
+        <div className="flex flex-col items-start mt-24">
           {menuItems.map(({ icon: Icon, ...menu }) => {
             const classes = getNavItemClasses(menu);
             return (
               <div className={classes}>
                 <Link
-                  className="flex py-4 px-3 bg-light items-center w-full h-full"
+                  className="flex py-4 px-3  items-center w-full h-full"
                   to={menu.link}
                 >
-                  <div className="bg-light" style={{ width: "2.5rem" }}>
-                    <Icon />
-                  </div>
+                <div className="" style={{ width: "2.5rem" }}>
+                  <Icon />
+                </div>
                   {!toggleCollapse && (
                     <span
                       className={ClassNames(
@@ -123,7 +122,6 @@ function SideNavbar() {
           })}
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
