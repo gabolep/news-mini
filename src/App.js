@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import { ProtectedRoute } from './routes/ProtectedRoute';
-//import { AuthProvider } from './context/authContext';
+import { AuthProvider } from './lib/context/auth.context';
+import ProtectedRoute from './components/utils/ProtectedRoute'
 import Dictionary from './pages/admin/Dictionary';
 import Game from './pages/admin/Game';
 import News from './pages/admin/News';
@@ -12,35 +12,35 @@ import "./App.css";
 const App = () => {
 
   return(
-    //<AuthProvider>
+    <AuthProvider>
       <Router>
           <Routes>
             <Route path='/' element={ <Home /> }/>
             <Route path='/login' element={ <Login /> }/>
             <Route path='/admin/dictionary' element={
-              //<ProtectedRoute>
+              <ProtectedRoute>
                 <Dictionary />
-              //</ProtectedRoute>
+              </ProtectedRoute>
             }/>
             <Route path='/admin/news' element={
-              //<ProtectedRoute>
+              <ProtectedRoute>
                 <News />
-              //</ProtectedRoute>
+              </ProtectedRoute>
             }/>
             <Route path='/admin/users' element={
-              //<ProtectedRoute>
+              <ProtectedRoute>
                 <Users />
-              //</ProtectedRoute>
+              </ProtectedRoute>
             }/>
             <Route path='/admin/game' element={
-              //<ProtectedRoute>
+              <ProtectedRoute>
                 <Game />
-              //</ProtectedRoute>
+              </ProtectedRoute>
             }/>
             <Route path='*' component={<h1>404 Page Not Found</h1>}/>
           </Routes>
         </Router>
-    //</AuthProvider>      
+    </AuthProvider>      
   )
 
 };
