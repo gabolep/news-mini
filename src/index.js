@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// eslint-disable-next-line no-unused-vars
+import firebase from "./utils/firebase"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
